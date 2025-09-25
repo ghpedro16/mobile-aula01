@@ -68,4 +68,29 @@ class PDVApp{
             return ItemCompra(produto, quantidade);
         }
     }
+
+    void exibirResultado(){
+        double total = carrinho.calcularTotal();
+        double desconto = carrinho.calcularDesconto();
+        double valorFinal = carrinho.calcularValorFinal();
+
+        print('\n-- RESUMO DA COMPRA --');
+        print('\nItens do carrinho');
+
+        for(int i = 0; i < carrinho.itens.length; i++){
+            print('$(i + 1), ${carrinho.itens[i]}');
+        }
+
+        print('\nTotal de itens: ${carrinho.quantidadeItens()}');
+        print('\nValor Total: R\$ ${total.toStringAsFixed(2)}');
+
+        if(desconto > 0){
+            print('\nDesconto (10%): R\$ ${desconto.toStringAsFixed(2)}');
+        }else{
+            print('\nDesconto R\$ 0.00');
+        }
+
+        print('\nValor Final: R\$ ${valorFinal.toStringAsFixed(2)}');
+        print('\nObrigado por utilizar o sistema PDV');
+    }
 }
