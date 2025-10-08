@@ -1,6 +1,7 @@
-import 'dart:io';
+import 'pdv_app.dart';
 
 void main(){
-
+    PDVApp app = PDVApp();
+    app.iniciar();
 }
 
