@@ -12,7 +12,6 @@ class CarrinhoCompra{
         for(var item in itens){
             total += item.calcularSubTotal();
         }
-
         return total;
     }
 
@@ -21,7 +20,6 @@ class CarrinhoCompra{
         if(total >= 200){
             return total * 0.1; //10%
         }
-
         return 0;
     }
 
